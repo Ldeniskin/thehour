@@ -26,7 +26,7 @@ export default StackNavigator({
   },
 },  {
   headerMode: 'none',
-  initialRouteName:'Mail',
+  initialRouteName:'Main',
   transitionConfig: noFadeSlideFromRightTransition,
   navigationOptions: {
     headerVisible: false,

@@ -10,11 +10,11 @@ import {
 
 class ActivityLoading extends Component {
   onSkipBtnHandle = (index) => {
-    this.props.navigation.navigate('Login');
+    this.props.navigation.navigate('Email');
     console.log(index);
   }
   doneBtnHandle = () => {
-    this.props.navigation.navigate('Login');
+    this.props.navigation.navigate('Email');
   }
   nextBtnHandle = (index) => {
     //Alert.alert('Next');

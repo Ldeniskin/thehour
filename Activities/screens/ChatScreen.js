@@ -75,6 +75,7 @@ class ChatScreen extends React.Component {
         >
         <View style={styles.container}>
         <Header
+          leftComponent={{ icon: 'menu', color: '#fff',onPress:this.openControlPanel }}
           centerComponent={{ text: 'CHAT', style: { color: '#fff', fontSize:responsiveFontSize(2.5) } }}
           statusBarProps={{ hidden:true }}
           outerContainerStyles={{ height:responsiveHeight(8),width:responsiveWidth(100), backgroundColor:"#000" }}

@@ -38,6 +38,7 @@ class HomeScreen extends React.Component {
     isOpen:false,
   }
   componentDidMount(){
+    console.log("kek");
     this.setState({data:posts});
     navigate=true;
     if (Platform.OS === "android" && listener === null) {
@@ -49,7 +50,11 @@ class HomeScreen extends React.Component {
   updateMenuState(isOpen) {
     this.setState({ isOpen });
   }
-
+  handlePress = (evt) =>{
+    console.log("kek");
+    console.log(`x coord = ${evt.nativeEvent.locationX}`);
+    console.log(`y coord = ${evt.nativeEvent.locationY}`);
+  }
   sideMenuNavigate = scene =>{
     if (scene=="Home"){
       this._drawer.close()
@@ -69,6 +74,7 @@ class HomeScreen extends React.Component {
   render() {
     const menu = <MainMenu nav={this.sideMenuNavigate}/>;
     return (
+      <TouchableWithoutFeedback onPress={(evt) => this.handlePress(evt)}>
        <Drawer
         ref={(ref) => this._drawer = ref}
         type="static"
@@ -84,6 +90,7 @@ class HomeScreen extends React.Component {
         >
         <View style={styles.container}>
           <Header
+            leftComponent={{ icon: 'menu', color: '#fff' }}
             centerComponent={{ text: 'HOME', style: { color: '#fff', fontSize:responsiveFontSize(2.5) } }}
             statusBarProps={{ hidden:true }}
             outerContainerStyles={{ height:responsiveHeight(8),width:responsiveWidth(100), backgroundColor:"#000" }}
@@ -106,7 +113,7 @@ class HomeScreen extends React.Component {
           </View>
         </View>
       </Drawer>
-
+    </TouchableWithoutFeedback>
     )
   }
 }

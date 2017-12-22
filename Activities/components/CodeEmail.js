@@ -32,7 +32,9 @@ state = {
   	if(this.state.inputValue.length==5){
   		code=this.state.inputValue;
   		this.setState({ inputValue: '' });
-      this.props.navigation.navigate('Main');
+      this.refs['code'].bounceOutLeft(500).then(()=>{
+        this.props.navigation.navigate('Main');
+      });
   	}else{
   		this.refs['text'].rubberBand(500);
   	}
@@ -45,83 +47,85 @@ state = {
 render() {
  return (
   <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-	<View style={{flex:1,backgroundColor:"#fff"}}>
-  <TextInputMask
-    ref='inp0'
-    caretHidden={true}
-    value={this.state.inputValue}
-    maxLength={5}
-    onSubmitEditing={this.submitClicked}
-    returnKeyType={'next'}
-    type={'only-numbers'}
-          onChangeText={this._handleTextChange}
-    onFocus={this._handleFocus}
-    style={{ opacity:0}}
-  />
-  <Grid>
-  <Row size={2}></Row>
-	<Animatable.Row size={1} ref="text" style={{alignItems: 'center',justifyContent: 'center'}} >
+    <View style={{flex:1,backgroundColor:"#fff"}}>
+      <Animatable.View  style={{flex:1}}ref="code">
+        <TextInputMask
+          ref='inp0'
+          caretHidden={true}
+          value={this.state.inputValue}
+          maxLength={5}
+          onSubmitEditing={this.submitClicked}
+          returnKeyType={'next'}
+          type={'only-numbers'}
+                onChangeText={this._handleTextChange}
+          onFocus={this._handleFocus}
+          style={{ opacity:0}}
+        />
+        <Grid>
+        <Row size={2}></Row>
+        <Animatable.Row size={1} ref="text" style={{alignItems: 'center',justifyContent: 'center'}} >
 
-	<TextInputMask
-    caretHidden={true}
-		value={this.state.inputValue[0]}
-		maxLength={1}
-    onSubmitEditing={this.submitClicked}
-		type={'only-numbers'}
-        	onChangeText={this._handleTextChange}
-		onFocus={this._handleFocus}
-		style={styles.inpt}
-	/>
-	<TextInputMask
-    caretHidden={true}
-		value={this.state.inputValue[1]}
-        	onChangeText={this._handleTextChange}
-		maxLength={1}
-    onSubmitEditing={this.submitClicked}
-		type={'only-numbers'}
-		onFocus={this._handleFocus}
-style={styles.inpt}
-	/>
-	<TextInputMask
-    caretHidden={true}
-		value={this.state.inputValue[2]}
-        	onChangeText={this._handleTextChange}
-		maxLength={1}
-    onSubmitEditing={this.submitClicked}
-		type={'only-numbers'}
-		onFocus={this._handleFocus}
-style={styles.inpt}
-	/>
-	<TextInputMask
-    caretHidden={true}
-		value={this.state.inputValue[3]}
-        	onChangeText={this._handleTextChange}
-		maxLength={1}
-    onSubmitEditing={this.submitClicked}
-		type={'only-numbers'}
-        	onFocus={this._handleFocus}
-style={styles.inpt}
-	/>
+        <TextInputMask
+          caretHidden={true}
+          value={this.state.inputValue[0]}
+          maxLength={1}
+          onSubmitEditing={this.submitClicked}
+          type={'only-numbers'}
+                onChangeText={this._handleTextChange}
+          onFocus={this._handleFocus}
+          style={styles.inpt}
+        />
+        <TextInputMask
+          caretHidden={true}
+          value={this.state.inputValue[1]}
+                onChangeText={this._handleTextChange}
+          maxLength={1}
+          onSubmitEditing={this.submitClicked}
+          type={'only-numbers'}
+          onFocus={this._handleFocus}
+      style={styles.inpt}
+        />
+        <TextInputMask
+          caretHidden={true}
+          value={this.state.inputValue[2]}
+                onChangeText={this._handleTextChange}
+          maxLength={1}
+          onSubmitEditing={this.submitClicked}
+          type={'only-numbers'}
+          onFocus={this._handleFocus}
+      style={styles.inpt}
+        />
+        <TextInputMask
+          caretHidden={true}
+          value={this.state.inputValue[3]}
+                onChangeText={this._handleTextChange}
+          maxLength={1}
+          onSubmitEditing={this.submitClicked}
+          type={'only-numbers'}
+                onFocus={this._handleFocus}
+      style={styles.inpt}
+        />
 
-	<TextInputMask
-    caretHidden={true}
-		value={this.state.inputValue[4]}
-        	onChangeText={this._handleTextChange}
-		maxLength={1}
-    onSubmitEditing={this.submitClicked}
-		type={'only-numbers'}
-        	onFocus={this._handleFocus}
-style={styles.inpt}
-	/>
-	</Animatable.Row>
-  <Row size={1} style={{alignItems: 'center',justifyContent: 'center'}}>
-    <Button icon={{name:'clear'}} buttonStyle={{backgroundColor:"#000",borderRadius:responsiveWidth(3)}} title="CLEAR" onPress={this.clear} />
-    <Button iconRight={{name:'send'}}  buttonStyle={{backgroundColor:"#000",borderRadius:responsiveWidth(3)}} title="SUBMIT" onPress={this.submitClicked} />
-  </Row>
-  <Row size={2}></Row>
+        <TextInputMask
+          caretHidden={true}
+          value={this.state.inputValue[4]}
+                onChangeText={this._handleTextChange}
+          maxLength={1}
+          onSubmitEditing={this.submitClicked}
+          type={'only-numbers'}
+                onFocus={this._handleFocus}
+      style={styles.inpt}
+        />
+        </Animatable.Row>
+        <Row size={1} style={{alignItems: 'center',justifyContent: 'center'}}>
+          <Button icon={{name:'clear'}} buttonStyle={{backgroundColor:"#000",borderRadius:responsiveWidth(3)}} title="CLEAR" onPress={this.clear} />
+          <Button iconRight={{name:'send'}}  buttonStyle={{backgroundColor:"#000",borderRadius:responsiveWidth(3)}} title="SUBMIT" onPress={this.submitClicked} />
+        </Row>
+        <Row size={2}></Row>
 
-  </Grid>
-	</View>
+        </Grid>
+      </Animatable.View>
+    </View>
   </TouchableWithoutFeedback>
   )}
 

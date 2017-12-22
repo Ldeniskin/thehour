@@ -108,6 +108,7 @@ class ProfileScreen extends React.Component {
         >
         <View style={styles.container}>
         <Header
+          leftComponent={{ icon: 'menu', color: '#fff' }}
           centerComponent={{ text: 'PROFILE', style: { color: '#fff', fontSize:responsiveFontSize(2.5) } }}
           statusBarProps={{ hidden:true }}
           outerContainerStyles={{ height:responsiveHeight(8),width:responsiveWidth(100), backgroundColor:"#000" }}

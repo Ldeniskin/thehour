@@ -24,7 +24,9 @@ constructor(props) {
  }
  submitClicked = inputValue => {
       Keyboard.dismiss();
-      this.props.navigation.navigate('Code');
+      this.refs['email'].bounceOutLeft(500).then(()=>{
+            this.props.navigation.navigate('Code');
+      });
   	/*if(this.state.inputValue.length==11){
   		phone=this.state.inputValue;
   		this.setState({ inputValue: '' });
@@ -41,24 +43,26 @@ constructor(props) {
 render() {
  return (
   <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-	<View style={{flex:1,backgroundColor:"#fff"}}>
-    <Grid>
-    <Row size={2}></Row>
-    <Animatable.Row size={1} ref="text" style={{alignItems: 'center',justifyContent: 'center'}} >
-        <Kaede
-          ref="inp"
-          style={{borderWidth:responsiveWidth(0.5),width:responsiveWidth(80)}}
-          labelStyle={{backgroundColor:"#000",color:"#fff"}}
-          label={'Email'}
-        />
-    </Animatable.Row>
-    <Row size={1} style={{alignItems: 'center',justifyContent: 'center'}}>
-          <Button icon={{name:'clear'}} buttonStyle={{backgroundColor:"#000",borderRadius:responsiveWidth(3)}} title="CLEAR" onPress={this.clear} />
-          <Button iconRight={{name:'send'}}  buttonStyle={{backgroundColor:"#000",borderRadius:responsiveWidth(3)}} title="SUBMIT" onPress={this.submitClicked} />
-    </Row>
-    <Row size={2}></Row>
-    </Grid>
-	</View>
+    <View style={{flex:1,backgroundColor:"#fff"}}>
+       <Animatable.View style={{flex:1}} ref="email">
+          <Grid>
+          <Row size={2}></Row>
+          <Animatable.Row size={1} ref="text" style={{alignItems: 'center',justifyContent: 'center'}} >
+              <Kaede
+                ref="inp"
+                style={{borderWidth:responsiveWidth(0.5),width:responsiveWidth(80)}}
+                labelStyle={{backgroundColor:"#000",color:"#fff"}}
+                label={'Email'}
+              />
+          </Animatable.Row>
+          <Row size={1} style={{alignItems: 'center',justifyContent: 'center'}}>
+                <Button icon={{name:'clear'}} buttonStyle={{backgroundColor:"#000",borderRadius:responsiveWidth(3)}} title="CLEAR" onPress={this.clear} />
+                <Button iconRight={{name:'send'}}  buttonStyle={{backgroundColor:"#000",borderRadius:responsiveWidth(3)}} title="SUBMIT" onPress={this.submitClicked} />
+          </Row>
+          <Row size={2}></Row>
+          </Grid>
+       </Animatable.View>
+    </View>
   </TouchableWithoutFeedback>
 
   )}
