@@ -1,0 +1,32 @@
+{
+  "main_menu": [
+    {
+      "title": "Home",
+      "icon": "home",
+      "iconType":"octicon",
+      "navigate": "Home",
+      "color": "#000"
+    },
+    {
+      "title": "Profile",
+      "icon": "user-o",
+      "iconType":"font-awesome",
+      "navigate": "Profile",
+      "color": "#000"
+    },
+    {
+      "title": "Settings",
+      "icon": "gear",
+      "iconType":"octicon",
+      "navigate": "Settings",
+      "color": "#000"
+    },
+    {
+      "title": "Chat",
+      "icon": "comment",
+      "iconType":"octicon",
+      "navigate": "Chat",
+      "color": "#000"
+    }
+  ]
+}

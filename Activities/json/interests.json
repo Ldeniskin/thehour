@@ -1,0 +1,56 @@
+[
+  {
+    "alias":"nothing",
+    "name":"Nothing",
+    "icon":"panorama-fish-eye",
+    "color":"#000000"
+  },
+  {
+    "alias":"art",
+    "name": "Art",
+    "icon": "brush",
+    "color": "#841584"
+  },
+  {
+    "alias":"music",
+    "name": "Music",
+    "icon": "music-note",
+    "color": "#009588"
+  },
+  {
+    "alias":"economics",
+    "name": "Economics",
+    "icon": "trending-up",
+    "color": "#FFC108"
+  },
+  {
+    "alias":"politics",
+    "name": "Politics",
+    "icon": "account-balance",
+    "color": "#9E9E9E"
+  },
+  {
+    "alias":"it",
+    "name": "IT",
+    "icon": "dvr",
+    "color": "#FF5723"
+  },
+  {
+    "alias":"sports",
+    "name": "Sports",
+    "icon": "directions-bike",
+    "color": "#00B9EF"
+  },
+  {
+    "alias":"travel",
+    "name": "Travel",
+    "icon": "flight-takeoff",
+    "color": "#ABCB00"
+  },
+  {
+    "alias":"cars",
+    "name": "Cars",
+    "icon": "directions-car",
+    "color": "#0063E4"
+  }
+]

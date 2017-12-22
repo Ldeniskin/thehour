@@ -1,0 +1,47 @@
+[
+  {
+    "login":"everybody",
+    "avatar": "profile",
+    "fullname": "Everybody",
+    "interests": [
+      "politics",
+      "music",
+      "economics",
+      "art",
+      "it",
+      "sports",
+      "travel",
+      "cars",
+      "nothing"
+    ]
+  },
+  {
+    "login":"somebody",
+    "avatar": "profile",
+    "fullname": "Somebody Once",
+    "interests": [
+      "economics",
+      "art",
+      "music",
+      "it"
+    ]
+  },
+  {
+    "login":"thehour",
+    "avatar": "avatar",
+    "fullname": "The Hour",
+    "interests": [
+      "sport",
+      "music",
+      "it"
+    ]
+  },
+  {
+    "login":"nobody",
+    "avatar": "",
+    "fullname": "Nobody",
+    "interests": [
+      "nothing"
+    ]
+  },
+]
